@@ -28,4 +28,10 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-Now you have to put the scrumbled string inside the code but soon it will be passed as CLI argument.
+Now you have to put the scrambled string inside the code but soon it will be passed as CLI argument.
+
+### Generate Words from a scrambled string
+https://github.com/dipanjal/word-finder/blob/be656ae5afeae3ce5d1fa0fe2e63dd6038c856b8/tests/test_word_finder_service.py#L9-L12
+
+### Unmask Words from a Masked Word with scrambled string
+https://github.com/dipanjal/word-finder/blob/be656ae5afeae3ce5d1fa0fe2e63dd6038c856b8/tests/test_word_finder_service.py#L28-L33
