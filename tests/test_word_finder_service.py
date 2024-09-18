@@ -23,10 +23,6 @@ class TestWordFinder(unittest.TestCase):
         self.assertNotIn("sight", meaningful_words)
 
 
-        # unmasked_word = unmask_word(masked_word="_H_S", available_letters=letter_list)
-        # print("Meaningful words:", unmasked_word)
-
-
     def test_unmasking_words(self):
         # Example usage
         puzzle_str = "SHITG"
