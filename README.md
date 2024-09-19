@@ -16,7 +16,13 @@ To create a virtualenv inside your project directory `.venv` and install the req
 ```
 make install
 ```
-This will install the dependencies inside the virtual environment 
+This will install the dependencies inside the virtual environment.
+Usually `make` utility comes with Linux/Mac distributions.
+
+If you are using Windows you can install `make` utility using chocolaty
+```
+choco install make
+```
 
 ## Manual Installation
 
