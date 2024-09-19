@@ -10,18 +10,32 @@ First, ensure that you have Python 3.x installed on your system. You can check y
 ```
 python --version
 ```
+## Automatic Installation
 
-Then, create a virtualenv, inside the project directory using this command
+To create a virtualenv inside your project directory `.venv` and install the required dependencies.
+```
+make install
+```
+This will install the dependencies inside the virtual environment 
+
+## Manual Installation
+
+If you are facing problem with `make install` you can try manual installation 
+First, create a virtualenv, inside the project directory using this command
 ```
 python -m venv .venv
 ```
-If you are using pycharm, we can create it using IDE as well.
 
 Now, Activate your venv
 Windows
 ```
-source venv/Scripts/activate
+venv/Scripts/activate
 ```
+Linux/Mac
+```
+source .venv/bin/activate
+```
+
 Then install dependencies
 ```
 pip install -r requirements.txt
