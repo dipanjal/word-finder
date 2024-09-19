@@ -1,0 +1,29 @@
+[build-system]
+requires = [
+    "setuptools>=65.5.0",
+    "wheel~=0.37.1"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "word_finder"
+description = "A python library to find words from combination"
+requires-python = ">=3.8"
+authors = [
+    {name = "Wendwessen Tereda", email = "wtereda@paytrace.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "nltk==3.8.1"
+]
+dynamic = ["version", "readme"]
+
+[project.urls]
+homepage = "https://github.com/dipanjal/word-finder"
+
+[tool.setuptools.dynamic]
+version = {file = ".app-version"}
+readme = {file = "README.md"}
