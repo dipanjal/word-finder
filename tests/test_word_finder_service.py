@@ -1,6 +1,8 @@
 import unittest
 
+from word_finder.ds.trie import Trie
 from word_finder.word_finder import WordFinder
+
 
 class TestWordFinder(unittest.TestCase):
 
@@ -22,7 +24,6 @@ class TestWordFinder(unittest.TestCase):
         self.assertIn("gist", meaningful_words)
         self.assertNotIn("sight", meaningful_words)
 
-
     def test_unmasking_words(self):
         # Example usage
         puzzle_str = "SHITG"
@@ -39,3 +40,12 @@ class TestWordFinder(unittest.TestCase):
 
         # check contains
         self.assertIn("this", unmasked_words)
+
+    def test_trie(self):
+        unmasked_words = ["THIS", "THIG", "HIST", "GIST"]
+        masked_word = "_H_S"  # THIS
+        trie = Trie()
+        for word in unmasked_words:
+            trie.insert(word)
+        words = trie.find_matching_words(masked_word)
+        self.assertIn("THIS", words)

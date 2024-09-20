@@ -1,6 +1,7 @@
 # Filter words that match the masked pattern using a custom Trie implementation
 class TrieNode:
-    def __init__(self):
+    def __init__(self, val: str = "<ROOT>"):
+        self.val = val
         self.children = {}
         self.is_end = False
 
@@ -13,7 +14,7 @@ class Trie:
         node = self.root
         for char in word:
             if char not in node.children:
-                node.children[char] = TrieNode()
+                node.children[char] = TrieNode(f"<{char}>")
             node = node.children[char]
         node.is_end = True
 
@@ -34,12 +35,11 @@ class Trie:
     #     dfs(self.root, 0, '')
     #     return matching_words
 
-    # Start of Selection
     def find_matching_words(self, masked_word):
-        stack = [(self.root, 0, '')]
+        stack = [(self.root, 0, "")]
         matching_words = []
 
-        # DFS
+        # DFS in word tree
         while stack:
             node, index, current_word = stack.pop()
 
@@ -48,14 +48,18 @@ class Trie:
                     matching_words.append(current_word)
                 continue
 
-            if masked_word[index] == '_':
+            if self._is_masked(masked_word[index]):
                 for char, child in node.children.items():
                     stack.append((child, index + 1, current_word + char))
             elif masked_word[index] in node.children:
-                child = node.children[masked_word[index]]
-                stack.append((child, index + 1, current_word + masked_word[index]))
+                curr_char = masked_word[index]
+                child = node.children[curr_char]
+                stack.append((child, index + 1, current_word + curr_char))
 
         return matching_words
+
+    def _is_masked(self, value: str) -> bool:
+        return value == "_"
 
 # Breakdown of this code ::find_matching_words::
     # Initial state:
