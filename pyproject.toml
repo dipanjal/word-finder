@@ -10,7 +10,7 @@ name = "word_finder"
 description = "A python library to find words from combination"
 requires-python = ">=3.8"
 authors = [
-    {name = "Wendwessen Tereda", email = "wtereda@paytrace.com"}
+    {name = "Dipanjal Maitra", email = "dipanjalmaitra@gmail.com"}
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
